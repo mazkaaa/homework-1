@@ -51,7 +51,7 @@ void printQueue() {
 		curr = curr->next;
 	}*/
 	for (int i = 0; i < ngecounter.counter; i++) {
-		printf("%d. %s || %s || $   %d\n", i+1, curr->cusName, curr->dressName, curr->priceDress);
+		printf("| %d. %-3s|  %s %12s| %s %7s| $%d %4s|\n", i+1, "", curr->cusName, "", curr->dressName, "", curr->priceDress, "");
 		curr = curr->next;
 	}
 }
@@ -68,11 +68,13 @@ int main() {
 		for (int i = 0; i < 30; i++) {
 			printf("\n");
 		}
+		printf("BLUE DRESS SHOP CASHIER QUEUE\n");
+		printf("#############################\n\n");
 		printf("1. View Queue\n");
 		printf("2. Add Customer to Queue\n");
 		printf("3. Serve Customer\n");
 		printf("4. Exit\n");
-		printf("Your input: ");
+		printf(">> Input choice: ");
 		scanf("%d", &menu);
 		rewind(stdin);
 
@@ -81,8 +83,12 @@ int main() {
 			for (int i = 0; i < 30; i++) {
 				printf("\n");
 			}
-			printf("\n========== Queue View ==========\n\n");
+			printf("\n               --- QUEUE VIEW ---\n\n");
+			printf("+-------+-------------------------+---------------+----------+\n");
+			printf("| No.   |  Customer's Name        |  Dress Name   |  Price   |\n");
+			printf("+-------+-------------------------+---------------+----------+\n");
 			printQueue();
+			printf("+-------+-------------------------+---------------+----------+\n");
 			getchar();
 			break;
 		case 2:
